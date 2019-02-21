@@ -5,8 +5,6 @@ function updateDynamicCache(dynamicCache, request, response) {
             .then(cache => {
                 cache.put(request, response.clone());
                 console.log('Llegó a sw-utils.js');
-                console.log(cache);
-
                 return response.clone();
             });
     } else {
