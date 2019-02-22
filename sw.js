@@ -154,7 +154,7 @@ self.addEventListener('fetch', e => {
     e.respondWith(respuesta); */
 
     // 5. Cache And Network Race
-    const response = new Promise((resolve, reject) => {
+    /* const response = new Promise((resolve, reject) => {
         let rejected = false;
         const failedOnce = () => {
             if (rejected) {
@@ -183,11 +183,12 @@ self.addEventListener('fetch', e => {
                 res ? resolve(res) : failedOnce;
             }).catch(err => failedOnce);
     });
-    e.respondWith(response);
+    e.respondWith(response); */
 
-    /* const respond = caches.match(e.request)
+    const respond = caches.match(e.request)
         .then(res => {
             if (res) {
+                updateStaticCache(STATIC_CACHE, e.request, APP_SHELL_INMUTABLE);
                 return res;
             } else {
                 return fetch(e.request)
@@ -197,5 +198,5 @@ self.addEventListener('fetch', e => {
             }
         });
 
-    e.waitUntil(respond); */
+    e.waitUntil(respond);
 });
