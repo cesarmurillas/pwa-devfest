@@ -1,3 +1,4 @@
+// Saving in dynamic cache
 function updateDynamicCache(dynamicCache, request, response) {
 
     if (response.ok) {
@@ -9,6 +10,21 @@ function updateDynamicCache(dynamicCache, request, response) {
             });
     } else {
         return response;
+    }
+}
+
+// Cache with network update
+function updateStaticCache(staticCache, req, APP_SHELL_INMUTABLE) {
+
+    if (APP_SHELL_INMUTABLE.includes(req.url)) {
+        // No hace falta actualizar el inmutable
+        // console.log('existe en inmutable', req.url );
+    } else {
+        // console.log('actualizando', req.url );
+        return fetch(req)
+            .then(res => {
+                return updateDynamicCache(staticCache, req, res);
+            });
     }
 }
 
