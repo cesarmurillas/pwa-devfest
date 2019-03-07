@@ -22,7 +22,8 @@ function isOnline() {
         $.mdtoast('Online', {
             interaction: true,
             interactionTimeout: 1000,
-            actionText: 'Ok!'
+            actionText: 'Ok!',
+            type: 'success'
         });
     } else {
         // No Network conection
