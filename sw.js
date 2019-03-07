@@ -75,7 +75,9 @@ const APP_SHELL = [
     'images/icon/menu.svg',
     'images/icon/twitter.png',
     'js/app.js',
-    'js/sw-utils.js'
+    'js/sw-utils.js',
+    'js/libs/plugins/mdtoast.min.css',
+    'js/libs/plugins/mdtoast.min.js'
 ];
 
 const APP_SHELL_INMUTABLE = [

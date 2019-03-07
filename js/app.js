@@ -14,3 +14,27 @@ if (navigator.serviceWorker) {
     }
     navigator.serviceWorker.register(swLocation);
 }
+
+// Detectar cambios de conexión
+function isOnline() {
+    if (navigator.onLine) {
+        // Network conection
+        $.mdtoast('Online', {
+            interaction: true,
+            interactionTimeout: 1000,
+            actionText: 'Ok!'
+        });
+    } else {
+        // No Network conection
+        $.mdtoast('Offline', {
+            interaction: true,
+            actionText: 'Ok!',
+            type: 'warning'
+        });
+    }
+}
+
+window.addEventListener('online', isOnline);
+window.addEventListener('offline', isOnline);
+
+isOnline();

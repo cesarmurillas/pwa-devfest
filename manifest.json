@@ -1,8 +1,8 @@
 {
     "name": "Ceiba DevFest",
     "short_name": "DevFest",
-    "theme_color": "#6f3594",
-    "background_color": "#64a8df",
+    "theme_color": "#fff5bb",
+    "background_color": "#fff5bb",
     "display": "standalone",
     "Scope": "/",
     "start_url": "index.html",
